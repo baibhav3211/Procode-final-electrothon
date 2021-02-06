@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %} Search results {% endblock title %} 
+{% block content %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+  
+  .image-holder{
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+  }
+  
+  .image-holder img{
+      width: 100%;   
+  }
+  
+  .image-holder h1{
+      position: absolute;
+      top: 14%;
+      left: 40%;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 70px; 
+      color: #fff;
+      font-weight: 700;
+  }
+  
+  .row .active .col{
+      height: 50px; 
+  }
+  
+  .row .card1 .card1-img-top{
+      height: 220px !important;
+      width: 100%; 
+  }
+  
+  .row .card1 {
+        overflow: hidden;
+        border: 0.5px solid gray;
+    }
+
+    .row .card1 .card-body {
+        height: 260px !important;
+        border-top: 0.5px solid gray;
+    }
+  
+  .author{
+      margin:  0 13px;
+  }
+  
+  .like{
+      margin-right: 13px;
+  }
+  
+  .row .card1:hover{
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+      .image-holder{
+          height: 170px;
+      }
+      .image-holder h1{
+          font-size: 30px;
+          left: 35%;
+      }
+  }
+  </style>
+  <br><br><br><br>  
+<div class="container">
+  <h2>Search results</h2>
+  {% if allPosts|length < 1 %} <p>No Search Results</p>
+    Your search query: <b>{{query}}</b> did not match any documents. <br>
+    Suggestions:
+    <ul>
+      <li>Make sure that all words are spelled correctly.</li>
+      <li> Try different keywords.</li>
+      <li>Try more general keywords.</li>
+    </ul>
+
+
+    {% endif %}
+  </div>
+    <div class="container"> 
+
+      <div class="row">
+        {% for post in allPosts %}
+        <div class="col-12 col-sm-4">
+          <div class="card1" style="margin: 20px 0px;">
+            <img src="/media/{{post.image}}" class="card1-img-top" alt="...">
+            <div class="card-body">
+              <div class="post-meta">
+                <span class="author">
+                  <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>Author
+                </span>
+                <span class="time">
+                  <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i></a>Dec 7, 2020
+                </span>
+                <span class="clinsol pull-right">
+                  12 min read
+                </span>
+
+              </div>
+              <br>
+              <h5 class="card-title">{{post.title}}</h5>
+              <p class="card-text">{{post.content |safe| truncatechars:100 }}
+              </p>
+              <a href="/articles/{{post.slug}}" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+{% endblock content %}

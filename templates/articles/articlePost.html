@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load social_share %}
+{% block title %} Articles {% endblock title %}
+{% block content %} 
+<style>
+
+@media only screen and (max-width: 600px){
+    .threads{
+        padding-left: 0pt;
+        margin-left: -100px;
+        width: auto;
+        margin-top: -85px;
+    }
+    .post-image{
+        height: 400px !important;
+        
+    }
+}
+</style>
+<br><br><br><br>
+
+<div class="container">
+  <img class="w-100 post-image" src="/media/{{post.image}}" style="height: 600px;" />
+  <div style="max-width: 700px; top: -100px;" class="position-relative bg-white p-3 p-sm-5 mx-auto text-secondary">
+      <div>
+        
+          {% for tag in post.tags.all %}
+                        <a href="#" class="mr-1 badge badge-info">#{{ tag }}</a>
+            {% endfor %}
+      
+    </div>
+    <h1 class="font-weight-bold text-dark">{{post.title}}</h1>
+    <p>By: {{post.author}}</p>
+    <p>{{post.content|safe}}</p>
+
+    <div class="my-3">
+      
+          {% for tag in post.tags.all %}
+                        <a href="#" class="mr-1 badge badge-info">#{{ tag }}</a>
+                    {% endfor %}
+      
+    </div>
+    <h4>Share this post</h4>
+    {% post_to_facebook object_or_url "Post to Facebook!" %}
+    {% post_to_twitter "New Project: {{object.title}}. Check it out!" object_or_url "Post to Twitter" %}
+    {% post_to_linkedin object_or_url %}
+    {% post_to_whatsapp object_or_url "Share via WhatsApp" %}
+  </div>
+
+  <div id="center">
+        <div class=" threads container my-3" style="padding-left: 85pt;">
+            <h5>Feel free to discuss your queries!!</h5>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://c-cube.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                    powered by Disqus.</a></noscript>
+
+
+        </div>
+    </div>
+    <hr>
+
+
+</div>
+
+
+
+{% endblock content %}

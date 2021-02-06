@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Create {% endblock title %}
+{% block createactive %} active {% endblock createactive %}
+{% block content %} 
+<br><br><br><br>
+<div class="container">
+    <h2>Create your post</h2>
+<div class="form-group">
+    <form enctype="Multipart/form-data" method="post" action="{% url 'create' %}">
+    {% csrf_token %}
+    <br>
+        {{ articleform.media }}
+        {{ articleform.as_p}}
+        
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+{% block script %}
+<script src="/static/js/slugify.js"></script>
+{% endblock script %}
+
+{% endblock content %}

@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Pacifico|Righteous|Roboto+Condensed|Ubuntu');
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Andika New Basic', sans-serif;
+}
+
+nav {
+    font-family: 'Lato';
+}
+
+.navbar-brand{
+    font-family: 'Pacifico';
+    font-size: 35px;
+    color: lightcoral !important;
+}
+.logo-brand{
+    font-family: 'Pacifico';
+}
+.nav-link{
+    font-size: 16px;
+    margin: 15px;
+    color: black !important;
+    font-family: 'Roboto Condensed';
+}
+
+.nav-link:hover{
+    color: #ec1010 !important;
+}
+
+.active .nav-link{
+    color: #ec1010 !important;
+}
+
+.menu-right-btn{
+    padding: 13px 20px;
+    margin-right: 4%;
+    transition: all 300ms ease-in;
+}
+
+.menu-right-btn:hover{
+    background: lightcoral;
+}
+
+
+/* Landing page */
+.site-content{
+    background-image: url("/static/img/bg3.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.site-title{
+    margin-top: 30%;
+    margin-bottom: 6%;
+    font-size: 45px;
+    color: rgb(250, 199, 103);
+}
+
+.line-1{
+    border-right: 2px solid rgba(255,255,255,.75);
+    white-space: nowrap;
+    overflow: hidden;   
+    max-width: 430px;
+}
+
+/* Animation of welcome to Procode*/
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+  blinkTextCursor 1s steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+.site-desc{
+    font-size: 18px;
+    text-align: center;
+    color: rgb(248, 211, 142);
+    width:430px;
+}
+
+.site-btn1{
+    margin-left: 20%;
+    background-color: rgb(245, 79, 79);
+    color: white;
+}
+
+.site-btn2{
+    background-color: white;
+}
+
+.site-btn1, .site-btn2{
+    margin-top: 5%;
+    margin-bottom: 40%;
+}
+
+
+/* Section 1 */
+
+.section1 .heading-1{
+    /* font-family: 'Patua One', cursive; */
+    font-family: 'Andika New Basic', sans-serif;
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 30px;
+}
+
+.section1 .card-text{
+    color: rgba(0, 0, 0, 0.59);
+}
+
+.section1{
+    margin-bottom: 8%;
+}
+
+.card{
+    width: 20rem;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+/* section 2 */
+
+.section2 .container-fluid{
+    background-image: url("/static/img/sec2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.section2 .heading-1{
+    margin-top: 20%;
+    margin-bottom: 4%;
+    font-family: 'Righteous';
+    width: 80%;
+    color: whitesmoke;
+}
+
+.section2 .para{
+    width: 80%;
+    font-family: 'Ubuntu';
+    color: whitesmoke;
+    margin-bottom: 7%;
+}
+
+.section2 .btn{
+    margin-bottom: 15%;
+    width: 30%;
+    padding: 2% 5%;
+}
+
+/* section 3 */
+.section3{
+    margin-top: 6%;
+    margin-bottom: 6%;
+    text-align: center;
+}
+
+.section3 h1{
+    font-family: 'Righteous';
+    color: rgba(0,0,0,0.5);
+}
+
+.section3 .review{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+    padding: 5px;
+}
+
+.section3 p{
+    margin: 0;
+}
+
+.section3 .review-name{
+    text-align: right ;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: rgba(0, 0, 0, 0.59);
+}
+
+.section3 ol li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.59);
+}
+
+.section3 a{
+    margin: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.59);
+    border-radius: 20px;
+}
+
+
+
+/* section 4 */
+.section4{
+    margin-top: 8%;
+}
+
+.section4 .row .col-md-7, .col-md-5{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.section4 a{
+    color: lightseagreen;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.section4 .para-1{
+    color: white;
+    font-family: 'Roboto Condensed';
+    margin-top: 7%;
+    font-size: 23px;
+}
+
+/* footer */
+.social i{
+    color: #EF5651;
+    font-size: 20px;
+}
+
+/* Code for responsiveness of the website */
+
+@media (max-width: 1031px) and (min-width: 991px){
+
+    header .nav-link{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 991px ) {
+    .section1 .card{
+        width: 400px;
+        height: auto;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width: 325px){
+    
+    .row .justify-content-center .text-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .site-content .site-title{
+        font-size: 25px;
+        padding-left: 15%;
+    }
+
+    .site-content .site-btn2{
+        display: none;
+    }
+    
+    
+
+    .site-content .site-btn1{
+        margin-left: 15%;
+    }
+
+    .section1 .heading-1, .heading-2{
+        font-size: 25px;
+    }
+
+    .section1 .col-md-4{
+        padding: 5%;
+        margin-left: 8%;
+    }
+
+    .section1 .card{
+        width: 15rem;
+        height: 550px;
+    }
+
+    .section4 .col-md-5{
+        padding: 0% 15%;
+    }
+
+    footer input[type="button"]{
+        margin-top: 5%;
+    }
+}
+
+@media (max-width: 400px ) {
+    .site-title{
+        font-size: 37px;
+    }
+
+    .line-1{
+        max-width: 93vw;
+    }
+
+    .site-desc{
+        width: 95vw;
+    }
+}
+
+/* Animation */
+
+.service {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+                -o-transform: scale(0.9);
+                    transform: scale(0.9);
+    -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+                -o-transition: all 1s ease-in-out;
+                    transition: all 1s ease-in-out;
+}
+.service.visible {
+    opacity: 1;
+    -webkit-transform: none;
+         -moz-transform: none;
+            -ms-transform: none;
+             -o-transform: none;
+                    transform: none;
+}
+
+
+
+/* Snack Bar */
+
+
+#snackbar {
+    visibility: hidden;
+    /* Hidden by default. Visible on click */
+    min-width: 250px;
+    max-width: 500px;
+    word-wrap: break-word;
+    /* Set a default minimum width */
+    margin-left: -125px;
+    /* Divide value of min-width by 2 */
+    background-color: #333;
+    /* Black background color */
+    color: #fff;
+    /* White text color */
+    text-align: center;
+    /* Centered text */
+    border-radius: 2px;
+    /* Rounded borders */
+    padding: 16px;
+    /* Padding */
+    position: fixed;
+    /* Sit on top of the screen */
+    z-index: 100;
+    right: 0px;
+    margin-right: 10px;
+    /* Add a z-index if needed */
+    bottom: 30px;
+    /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible;
+    /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+  
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+  
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+  
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+  
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+
+
+
+

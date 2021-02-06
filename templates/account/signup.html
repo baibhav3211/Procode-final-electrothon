@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<!-- <h1>{% trans "Sign Up" %}</h1>
+
+<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+</form> -->
+
+<style>
+  .wrapper{
+    margin-top: 50px;
+    margin-left: 230px;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .wrapper{
+    margin-top: 50px;
+    margin-left: auto;
+  }
+  }
+  
+</style>
+
+<br><br><br>
+<section id="main" class="wrapper">
+  <div class="inner">
+    <div class="container">
+      <div class="row" style="text-align: left;">
+        <aside class="col-lg-6" style="float:none;margin:auto;">
+          <div class="card border border-primary">
+            <article class="card-body">
+              <a href="{{ login_url }}" class="float-right btn btn-outline-primary">Sign In</a>
+              <h4 class="card-title mb-4 mt-1">Sign Up</h4>
+              <!-- <p>
+                <a href="/accounts/google/login/?process=login" class="btn btn-block btn-outline-danger"> <i
+                    class="icon fa-google  "></i> SignUp via Google</a>
+
+              </p> -->
+              <hr>
+              <!-- <h6 style="text-align: center; ">Or</h6>
+              <hr> -->
+              <form class="signup" method="POST" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                <div id="div_id_username" class="form-group"> <label for="id_username" class=" requiredField">
+                    Username<span class="asteriskField">*</span> </label>
+                  <div class=""> <input type="text" name="username" placeholder="Username" autofocus="autofocus"
+                      maxlength="150" class="textinput textInput form-control" required id="id_username"> </div>
+                </div>
+                <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
+                    Email:<span class="asteriskField">*</span> </label>
+                  <div class=""> <input type="email" name="email" placeholder="Email address" autofocus="autofocus"
+                      maxlength="150" class="textinput textInput form-control" required id="id_email"> </div>
+                </div>
+                <div id="div_id_password1" class="form-group"> <label for="id_password1" class=" requiredField">
+                    Password<span class="asteriskField">*</span> </label>
+                  <div class=""> <input type="password" name="password1" placeholder="Password"
+                      class="textinput textInput form-control" required id="id_password2"> </div>
+                </div>
+                <div id="div_id_password2" class="form-group"> <label for="id_password2" class=" requiredField">
+                    Password(again)<span class="asteriskField">*</span> </label>
+                  <div class=""> <input type="password" name="password2" placeholder="Password(again)"
+                      class="textinput textInput form-control" required id="id_password2"> </div>
+                </div>
+                
+              
+
+
+
+                
+                <button class="primaryAction" type="submit">{% trans "Sign Up" %}</button>
+              </form>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
+
+
+
+
+
+</div>

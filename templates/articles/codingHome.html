@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %} Articles {% endblock title %}
+{% block articlehomeactive %} active {% endblock articlehomeactive %}
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+    .image-holder {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .image-holder img {
+        width: 100%;
+    }
+
+    .image-holder h1 {
+        position: absolute;
+        top: 14%;
+        left: 39%;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 50px;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .row .active .col {
+        height: 50px;
+    }
+
+    .row .card1 .card1-img-top {
+        height: 220px !important;
+        width: 100%;
+    }
+
+    .row .card1 {
+        overflow: hidden;
+        border: 0.5px solid gray;
+    }
+
+    .row .card1 .card-body {
+        height: 260px !important;
+        border-top: 0.5px solid gray;
+    }
+
+    .author {
+        margin: 0 13px;
+    }
+
+    .like {
+        margin-right: 13px;
+    }
+
+    .row .card1:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .image-holder {
+            height: 170px;
+        }
+
+        .image-holder h1 {
+            font-size: 30px;
+            left: 35%;
+        }
+    }
+</style>
+<br><br><br><br>
+<div class="image-holder">
+    <img src="/static/img/Articlehomebg.jpg">
+    <h1>Programming</h1>
+</div>
+<div class="container">
+
+    <div class="row">
+        {% for post in allPosts %}
+        <div class="col-12 col-sm-4">
+            <div class="card1" style="margin: 20px 0px;">
+                <img src="/media/{{post.image}}" class="card1-img-top" alt="...">
+                <div class="card-body">
+                    <div class="post-meta">
+                        <span class="author">
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>Author
+                        </span>
+                        <span class="time">
+                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i></a>Dec 7, 2020
+                        </span>
+                        <span class="clinsol pull-right">
+                            12 min read
+                        </span>
+
+                    </div>
+                    <br>
+                    {% for tag in post.tags.all %}
+                        <a href="{% url 'tagged' tag.slug %}" class="mr-1 badge badge-info">#{{ tag }}</a>
+                    {% endfor %}
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.content |safe| truncatechars:100 }}
+                    </p>
+                    <a href="/articles/{{post.slug}}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    {% include 'articles/pagination.html' with page=allPosts %}
+</div>
+{% endblock content %}
+
+
+

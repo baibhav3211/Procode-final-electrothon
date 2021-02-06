@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Droid Sans', sans-serif;
+  outline: none;
+}
+::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+body {background-color: #2a2b3d}
+#contents {
+  position: relative;
+  transition: .3s;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 100px;
+  background-color: #2a2b3d;
+}
+.margin {
+  margin-left: 0 !important;
+}
+/* Start side navigation bar  */
+
+/* Start welcome */
+
+.welcome {
+  color: #CCC;
+  margin-top: 100px;
+}
+.welcome .content {
+  background-color: #313348;
+  padding: 15px;
+  margin-top: 25px;
+}
+.welcome h2 {
+  font-family: Calibri;
+  font-weight: 100;
+  margin-top: 0
+}
+.welcome p {
+  color: #999;
+}
+
+
+/* Start statistics */
+.statistics {
+  margin-top: 25px;
+  color: #CCC;
+}
+.statistics .box {
+  background-color: #313348;
+  padding: 15px;
+  overflow: hidden;
+}
+.statistics .box > i {
+  float: left;
+  color: #FFF;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+}
+.statistics .box .info {
+  float: left;
+  width: auto;
+  margin-left: 10px;
+}
+.statistics .box .info h3 {
+  margin: 5px 0 5px;
+  display: inline-block;
+}
+.statistics .box .info p {color:#BBB}
+
+/* End statistics */
+
+/* Start statis */
+
+.statis {
+  color: #EEE;
+  margin-top: 15px;
+}
+.statis .box {
+  position: relative;
+  padding: 15px;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-bottom: 25px;
+}
+.statis .box h3:after {
+  content: "";
+  height: 2px;
+  width: 70%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.12);
+  display: block;
+  margin-top: 10px;
+}
+.statis .box i {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  font-size: 22px;
+  padding: 15px;
+  top: -25px;
+  left: -25px;
+  background-color: rgba(255, 255, 255, 0.15);
+  line-height: 60px;
+  text-align: right;
+  border-radius: 50%;
+}
+
+/*chart*/
+.chrt3 {
+  padding-bottom: 50px;
+}
+.chrt3 .chart-container {
+  height: 350px;
+  padding: 15px;
+  margin-top: 25px;
+}
+.chrt3 .box {
+  padding: 15px;
+}
+
+
+.main-color {
+  color: #ffc107
+}
+.warning {background-color: #f0ad4e}
+.danger {background-color: #d9534f}
+.success {background-color: #5cb85c}
+.inf {background-color: #5bc0de}
+
+
+/* كمية الإمبورتات دى علشان البوتستراب تبطل غتاته وتسيب العناصر اللى متعدله فى حالها طبعا الكلام ده فى كود بن بس */
+
+
+/* Start media query */
+
+@media (max-width: 767px) {
+  #contents {
+    margin: 0 !important
+  }
+  .statistics .box {
+    margin-bottom: 25px !important;
+  }
+
+}
+
+</style>
+
+    <section id="contents">
+    
+      <div class="welcome">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="content">
+                <h2>Welcome {{request.user.username}}</h2>
+                <p>Update your profile settings</p>
+              </div>
+            </div>
+          </div>
+           <div class="row">
+            <div class="col-md-3 col-sm-12">
+              <div class="content">
+                <h2>Change password</h2>
+                <a href="{% url 'account_change_password' %}"><button class="btn btn-danger">Click Here</button></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      </section>
+
+{% endblock %}

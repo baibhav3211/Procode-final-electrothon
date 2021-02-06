@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <main>
+        <div class="container-fluid p-0">
+            <div class="site-content">
+                <div class="d-flex justify-content-center">
+                    <div class="d-flex flex-column">
+                        <p class="line-1 anim-typewriter site-title">Welcome to Procode</p>
+                        <p class="site-desc">We are here to make your coding skills better and create your project
+                            articles.</p>
+
+                        <div class="d-flex flex-row">
+                            <input type="button" value="<Code />" class="btn site-btn1 px-4 py-3 mr-4 btn-dark">
+                            <input type="button" value="<Know More />" class="btn site-btn2 px-4 py-3 mr-4 btn-light">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section1 container ">
+            <div class="d-flex flex-column">
+                <h1 class="heading-1">Our Articles and Projects</h1>
+                <div class=" d-flex flex-lg-row justify-content-lg-between flex-column align-items-center">
+                    <div class="service">
+                        <div class="card">
+                            <img src="static/img/arduino.jpg" alt="image" class="card-img-top" style="height: 220px;">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="{% url 'roboticshome' %}">Arduino & Robotics</a></h4>
+                                <p class="card-text">Arduino is an open-source hardware and software company, project
+                                    and user community that designs and manufactures single-board microcontrollers and
+                                    microcontroller kits for building digital devices. This Section gives you the best
+                                    explained projects in Arduino.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="card">
+                            <img src="static/img/coding.jpg" alt="image" class="card-img-top" style="height: 220px;">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="{% url 'codinghome' %}">Programming</a></h4>
+                                <p class="card-text">This section provides the best platform to contribute your codes.
+                                    You get codes of every domain here, it includes competitive programming, open CV,
+                                    ML.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="card">
+                            <img src="static/img/bot.jpg" alt="image" class="card-img-top" style="height: 220px;">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="{% url 'articlehome' %}">Miscellaneous</a></h4>
+                                <p class="card-text">Robotics involves design, construction, operation, and use of
+                                    robots. Explore this section, and you will get
+                                    Best documentation on Robotics projects. This helps you in better understanding and
+                                    exposure to it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-end">
+                    <div class="d-flex flex-column m-4">
+                        <h1 class="heading-1">Join our community</h1>
+                        <p class="para">Work with us, ask your doubts here.</p>
+                        <button type="button" class="btn btn-danger"><i class="fa fa-discord"></i>Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section3">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="5000">
+                        <div class="review">
+                            <p class="review-contant">
+                                "For me it was never about money, but solving problems for the future of humanity."
+                            </p>
+                            <p class="review-name"><em>-Elon Musk</em></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-interval="5000">
+                        <div class="review">
+                            <p class="review-contant">
+                                “It does not take much strength to do things, but it requires a great deal of strength
+                                to decide what to do.”
+                            </p>
+                            <p class="review-name"><em>―Elbert Hubbard</em></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-interval="5000">
+                        <div class="review">
+                            <p class="review-contant">
+                                “I feel like every project I work on is a dream project, so long as I am learning.”
+                            </p>
+                            <p class="review-name"><em>-Simeon Kondev</em></p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="section4 bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <img src="static/img/bg1.jpg" class="img-fluid">
+                    </div>
+                    <div class="col-md-5">
+                        <h1 class="text-white">Didn't know where to start from</h1>
+                        <a href="#">Click here</a>
+                        <p class="para-1">
+                        <ul style="color: white;">
+                            <li>The motive of this platform was to create a place where students can get access to the projects made by previous years and alumini.</li>
+                            <li>Detailed explanation is provided by the creators(also the project creators).
+                                Help other people grow around you by posting the documentation of your work and projects.</li>
+                            <li>Post your articles also here and get some rewards from us!.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section5 text-center">
+            <h4 style="margin-top: 5%;">Get coding challenges everyday from us!</h4>
+            <h4 class="my-4">If you need any help</h4>
+            <form method="post" action="/">
+            <div class="form-inline justify-content-center">
+            {% csrf_token %}
+                <input type="text" name="email" id="email" placeholder="Email" size="40"
+                    class="form-control px-4 py-2 m-1">
+                
+                <input type="submit" value="Subscribe" class="btn btn-danger px-4 py-2 m-2">
+            </div>
+            </form>
+
+            <div class="social" style="margin: 5%;">
+                <div class="d-flex flex-row justify-content-center">
+                    <i class="fa fa-facebook m-2 3x"></i>
+                    <i class="fa fa-instagram m-2 3x"></i>
+                    <i class="fa fa-twitter m-2 3x"></i>
+                    <i class="fa fa-youtube m-2 3x"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}
