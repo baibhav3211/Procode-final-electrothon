@@ -98,7 +98,7 @@
                         <a href="{% url 'tagged' tag.slug %}" class="mr-1 badge badge-info">#{{ tag }}</a>
                     {% endfor %}
                     <h5 class="card-title">{{post.title}}</h5>
-                    <p class="card-text">{{post.content |safe| truncatechars:100 }}
+                    <p class="card-text">{{post.content |safe| truncatechars:40 }}
                     </p>
                     <a href="/articles/{{post.slug}}" class="btn btn-primary">Read More</a>
                 </div>
