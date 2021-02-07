@@ -28,7 +28,7 @@ python manage.py runserver
 <p>Open this in your browser.</p>
 <p>If you feel any problem, feel free to contact us</p>
 
-## Contributors:
+## Contributors ##:
 1. Ritika Lohia
-2. Ujjwal Chaudhary
+2. Ujjawal Chaudhary
 
