@@ -52,7 +52,7 @@ def articleHome(request):
     return render(request, "articles/articleHome.html", context)
 
 def roboticsHome(request): 
-    allPosts= Post.objects.all().filter(category=2)
+    allPosts= Post.objects.all().filter(category=1)
     paginator = Paginator(allPosts, 18)
     page = request.GET.get('page')
     try:
@@ -66,7 +66,7 @@ def roboticsHome(request):
     return render(request, "articles/roboticsHome.html", context)
 
 def codingHome(request): 
-    allPosts= Post.objects.all().filter(category=1)
+    allPosts= Post.objects.all().filter(category=2)
     paginator = Paginator(allPosts, 18)
     page = request.GET.get('page')
 
