@@ -24,11 +24,11 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-<p>You will get your localhost server running on port 8000 [](http://127.0.0.1:8000/) </p>
+<p>You will get your localhost server running on port 8000 http://127.0.0.1:8000/ </p>
 <p>Open this in your browser.</p>
 <p>If you feel any problem, feel free to contact us</p>
 
-## # Contributors #:
-1. Ritika Lohia
-2. Ujjawal Chaudhary
+## Contributors:
+1. Ritika Lohia :     [Linkedin](https://www.linkedin.com/in/ritika-lohia-731972195/), [Github](https://github.com/ritikalohia)
+2. Ujjwal Chaudhary:  [Linkedin](https://www.linkedin.com/in/ujjwal-chaudhary-4436701aa/), [Github](https://github.com/UJJWAL2001)
 
